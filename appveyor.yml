@@ -1,7 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2019
 build_script:
-- ps: Write-Output "Verify build"
+- ps: Get-ChildItem -Path . -Recurse -Filter "Ruby*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
 test: off
 on_finish:
 - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
