@@ -6,7 +6,7 @@ build_script:
     Remove-Item -Path C:\Ruby* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\Python* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\go* -Recurse -Force -Confirm:$false
-    Remove-Item -Path C:\Qt -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\Q* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\cygwin* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\Miniconda* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\OpenSSL* -Recurse -Force -Confirm:$false
