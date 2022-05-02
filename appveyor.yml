@@ -2,6 +2,7 @@ version: 1.0.{build}
 image: Visual Studio 2019
 build_script:
 - ps: |
+    Remove-Item -Path C:\Ruby* -Recurse -Force -Confirm:$false
     #Get-ChildItem -Path C:\ -Recurse -Filter "Ruby*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
     #Get-ChildItem -Path C:\ -Recurse -Filter "Python*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
     #Get-ChildItem -Path C:\ -Recurse -Filter "go*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
