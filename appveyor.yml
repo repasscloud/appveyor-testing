@@ -2,13 +2,13 @@ version: 1.0.{build}
 image: Visual Studio 2019
 build_script:
 - ps: |
-    Get-ChildItem -Path C:\ -Recurse -Filter "Ruby*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "Python*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "go*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "Qt*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "cygwin*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "Miniconda*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    Get-ChildItem -Path C:\ -Recurse -Filter "OpenSSL*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "Ruby*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "Python*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "go*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "Qt*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "cygwin*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "Miniconda*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    #Get-ChildItem -Path C:\ -Recurse -Filter "OpenSSL*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
     Get-ChildItem -Path C:\
 test: off
 #on_finish:
