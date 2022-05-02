@@ -1,7 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2019
 build_script:
-- ps: [System.DateTime]::Now
+- ps: $([System.DateTime]::Now)
 - ps: |
     Remove-Item -Path C:\Ruby* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\Python* -Recurse -Force -Confirm:$false
@@ -11,7 +11,7 @@ build_script:
     Remove-Item -Path C:\Miniconda* -Recurse -Force -Confirm:$false
     Remove-Item -Path C:\OpenSSL* -Recurse -Force -Confirm:$false
     Get-ChildItem -Path C:\
-- ps: [System.DateTime]::Now
+- ps: $([System.DateTime]::Now)
 test: off
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
