@@ -2,14 +2,15 @@ version: 1.0.{build}
 image: Visual Studio 2019
 build_script:
 - ps: |
+    [System.DateTime]::Now
     Remove-Item -Path C:\Ruby* -Recurse -Force -Confirm:$false
-    #Get-ChildItem -Path C:\ -Recurse -Filter "Ruby*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "Python*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "go*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "Qt*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "cygwin*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "Miniconda*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
-    #Get-ChildItem -Path C:\ -Recurse -Filter "OpenSSL*" | ForEach-Object { Remove-Item -Path $_.FullName -Confirm:$false -Force -Recurse }
+    Remove-Item -Path C:\Python* -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\go* -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\Qt* -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\cygwin* -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\Miniconda* -Recurse -Force -Confirm:$false
+    Remove-Item -Path C:\OpenSSL* -Recurse -Force -Confirm:$false
+    [System.DateTime]::Now
     Get-ChildItem -Path C:\
 test: off
 #on_finish:
