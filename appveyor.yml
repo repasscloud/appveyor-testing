@@ -1,15 +1,12 @@
 version: 1.0.{build}
 image: Visual Studio 2019
+install:
+  - ps: Install-Module Selenium -Repository PSGallery -Force
 build_script:
-- ps: $([System.DateTime]::Now)
-- ps: |
-    Get-ChildItem -Path C:\
-- ps: |
+  - ps: $([System.DateTime]::Now)
+  - ps: |
     [System.Array]$f = Get-ChildItem -Path C:\
     foreach ($i in (0..$($f.length-1))){Write-Output "${i} -> $($f[$i].name)"}
-- ps: |
-    (Get-CimInstance -ClassName Win32_LogicalDisk | Select-Object -Property DeviceID,@{'Name' = 'FreeSpace (GB)'; Expression= { [int]($_.FreeSpace / 1GB) }} | Measure-Object -Property 'FreeSpace (GB)' -Sum).Sum
-    Install-Module Selenium
 test: off
 on_finish:
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
