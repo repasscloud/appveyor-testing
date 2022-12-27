@@ -5,8 +5,8 @@ install:
 build_script:
   - ps: $([System.DateTime]::Now)
   - ps: |
-    [System.Array]$f = Get-ChildItem -Path C:\
-    foreach ($i in (0..$($f.length-1))){Write-Output "${i} -> $($f[$i].name)"}
+      [System.Array]$f = Get-ChildItem -Path C:\
+      foreach ($i in (0..$($f.length-1))){Write-Output "${i} -> $($f[$i].name)"}
 test: off
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
