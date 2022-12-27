@@ -7,8 +7,7 @@ build_script:
   - ps: |
       [System.Array]$f = Get-ChildItem -Path C:\
       foreach ($i in (0..$($f.length-1))){Write-Output "${i} -> $($f[$i].name)"}
-  - ps: Get-ChildItem -Path $HOME\Downloads
-test: off
+  - ps: Get-ChildItem -Path $HOME/Downloads
 on_finish:
   - ps: Write-Output "Done!"
 #  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
